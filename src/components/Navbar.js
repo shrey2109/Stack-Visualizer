@@ -26,6 +26,16 @@ function Navbar() {
           type: "UPDATE_ARRAY",
           arrVal: num,
         });
+
+        dispatch({
+          type: "UPDATE_PUSH",
+          pushbtn: true,
+        });
+
+        dispatch({
+          type: "UPDATE_POP",
+          popbtn: false,
+        });
       }
         
         const handlePop = () => {
@@ -40,6 +50,17 @@ function Navbar() {
             type: "UPDATE_ARRAY",
             arrVal: arr,
           });
+          
+          dispatch({
+            type: "UPDATE_PUSH",
+            pushbtn: false,
+          });
+
+          dispatch({
+            type: "UPDATE_POP",
+            popbtn: true,
+          });
+
     }
 
     const handlePopAll = () => {
@@ -49,6 +70,16 @@ function Navbar() {
       dispatch({
         type: "UPDATE_ARRAY",
         arrVal: [],
+      });
+
+      dispatch({
+        type: "UPDATE_PUSH",
+        pushbtn: false,
+      });
+
+      dispatch({
+        type: "UPDATE_POP",
+        popbtn: false,
       });
     }
 

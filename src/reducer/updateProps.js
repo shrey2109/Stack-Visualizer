@@ -3,6 +3,8 @@ const initialState = {
   sortingColor: "",
   sortingSpeed: 1000,
   play: false,
+  push:false,
+  pop:false,
   arrVal: [],
 };
 
@@ -31,6 +33,14 @@ const updateProps = (state = initialState, action) => {
     case 'PLAY_PAUSE': {
       return {...state,play:action.play};
    }
+
+   case 'UPDATE_PUSH': {
+    return {...state,pushbtn:action.pushbtn};
+  }
+
+  case 'UPDATE_POP': {
+    return {...state,popbtn:action.popbtn};
+  }
 
     default:
       return state;
